@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <!-- th:action="@{/songform} below is a 'URL expression' that indicates which route the user will be
+    directed to in the controller.  A Song object called song (which is passed from the controller GET method)
+    is populated when user clicks Submit.  It is then sent to
+    /songform POST route in controller, where it is available as a param -->
+    <form action="#" th:action="@{/songform}" th:object="${song}" method="post">
+        Name: <input type="text" th:field="*{name}"/>
+        Artist: <input type="text" th:field="*{artist}"/>
+        Album: <input type="text" th:field="*{album}"/>
+        Rating: <input type="text" th:field="*{rating}"/>
+        Year: <input type="text" th:field="*{year}"/>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
